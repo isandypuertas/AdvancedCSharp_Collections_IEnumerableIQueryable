@@ -23,7 +23,7 @@ namespace AdvancedCSharp_IEnumerableIQueryable
 
         private static void IQueryableTest()
         {
-            EmployeeDBContext context = new EmployeeDBContext("Server=NB-IPUERTAS\\SQL2016;\r\nDatabase=LocalDatabase;\r\nTrusted_Connection=True;\r\nTrustServerCertificate=True;\r\n");
+            EmployeeDBContext context = new EmployeeDBContext("Server=.\\SQL2016;\r\nDatabase=LocalDatabase;\r\nTrusted_Connection=True;\r\nTrustServerCertificate=True;\r\n");
             IQueryable<Employee> employees = context.Employees.Where(e => e.Id > 1);
             employees = employees.Take(2);
             foreach (Employee employee in employees)
@@ -33,3 +33,4 @@ namespace AdvancedCSharp_IEnumerableIQueryable
         }
     }
 }
+
